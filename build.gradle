@@ -5,11 +5,16 @@ plugins {
 group 'tk.personal'
 version '1.0.0'
 
+ext {
+    damlSdkVersion = '1.7.0'
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation "com.daml:bindings-rxjava:$damlSdkVersion"
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
