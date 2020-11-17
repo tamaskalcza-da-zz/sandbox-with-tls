@@ -54,7 +54,7 @@ public class LedgerClientTest {
   private void waitForSandbox() throws MalformedURLException {
     System.out.println("Waiting for sandbox...");
     URL sandbox = new URL("http://localhost:6865");
-    if (eventually(() -> ping(sandbox), Duration.ofSeconds(10))) {
+    if (!eventually(() -> ping(sandbox), Duration.ofSeconds(10))) {
       fail("Could not connect to Sandbox.");
     }
   }
