@@ -20,6 +20,7 @@ dependencies {
 }
 
 task generateCertificates(type: Exec) {
+    inputs.files(file('./generate-tls-files.sh'))
     outputs.dir('./examples/tls')
     commandLine './generate-tls-files.sh'
 }
