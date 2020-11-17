@@ -19,6 +19,11 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
 
+task generateCertificates(type: Exec) {
+    outputs.dir('./examples/tls')
+    commandLine './generate-tls-files.sh'
+}
+
 test {
     useJUnitPlatform()
-}
+}.dependsOn(generateCertificates)
