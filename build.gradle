@@ -27,4 +27,4 @@ task generateCertificates(type: Exec) {
 
 test {
     useJUnitPlatform()
-}.dependsOn(generateCertificates)
+}.dependsOn(generateCertificates).dependsOn(cleanTest)
